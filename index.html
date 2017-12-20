@@ -9,11 +9,11 @@
 }
 
 #licensing {
-  fill: green;
+  fill: blue;
 }
 
 .link.licensing {
-  stroke: green;
+  stroke: blue;
 }
 
 .link.resolved {
@@ -41,7 +41,7 @@ text {
 var links = [
   {source: "Phyiscian A", target: "Physician B", type: "licensing"},
   {source: "Phyiscian A", target: "Physician C", type: "licensing"},
-  {source: "Phyiscian A", target: "Physician D", type: "licensing"},
+  {source: "Phyiscian A", target: "Physician D", type: "resolved"},
   {source: "Phyiscian A", target: "Physician E", type: "licensing"},
   {source: "Phyiscian A", target: "Physician F", type: "licensing"},
   {source: "Phyiscian B", target: "Physician G", type: "licensing"},
@@ -62,8 +62,8 @@ links.forEach(function(link) {
   link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
 });
 
-var width = 629,
-    height = 197;
+var width = 100,
+    height = 100;
 
 var force = d3.layout.force()
     .nodes(d3.values(nodes))
