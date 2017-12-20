@@ -9,11 +9,11 @@
 }
 
 #licensing {
-  fill: blue;
+  fill: green;
 }
 
 .link.licensing {
-  stroke: blue;
+  stroke: green;
 }
 
 .link.resolved {
@@ -62,15 +62,15 @@ links.forEach(function(link) {
   link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
 });
 
-var width = 100,
-    height = 100;
+var width = 812,
+    height = 277;
 
 var force = d3.layout.force()
     .nodes(d3.values(nodes))
     .links(links)
     .size([width, height])
     .linkDistance(60)
-    .charge(-300)
+    .charge(-100)
     .on("tick", tick)
     .start();
 
