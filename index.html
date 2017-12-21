@@ -8,11 +8,11 @@
   stroke-width: 1.5px;
 }
 
-#licensing {
+#Rendering {
   fill: green;
 }
 
-.link.licensing {
+.link.Rendering {
   stroke: green;
 }
 
@@ -39,20 +39,20 @@ text {
 
 // http://blog.thomsonreuters.com/index.php/mobile-patent-suits-graphic-of-the-day/
 var links = [
-  {source: "Physician A", target: "Physician B", type: "licensing"},
-  {source: "Physician A", target: "Physician C", type: "licensing"},
-  {source: "Physician A", target: "Physician D", type: "resolved"},
-  {source: "Physician A", target: "Physician E", type: "licensing"},
-  {source: "Physician A", target: "Physician F", type: "licensing"},
-  {source: "Physician B", target: "Physician G", type: "licensing"},
-  {source: "Physician B", target: "Physician H", type: "licensing"},
-  {source: "Physician C", target: "Physician I", type: "licensing"},
-  {source: "Physician C", target: "Physician J", type: "licensing"},
-  {source: "Physician A", target: "Physician K", type: "licensing"},
-  {source: "Physician K", target: "Physician L", type: "licensing"},
-  {source: "Physician K", target: "Physician M", type: "licensing"},
-  {source: "Physician A", target: "Physician N", type: "licensing"},
-  {source: "Physician I", target: "Physician E", type: "licensing"}
+  {source: "Physician A", target: "Physician B", type: "Referring"},
+  {source: "Physician A", target: "Physician C", type: "Referring"},
+  {source: "Physician A", target: "Physician D", type: "Referring"},
+  {source: "Physician A", target: "Physician E", type: "Referring"},
+  {source: "Physician A", target: "Physician F", type: "Rendering"},
+  {source: "Physician B", target: "Physician G", type: "Rendering"},
+  {source: "Physician B", target: "Physician H", type: "Rendering"},
+  {source: "Physician C", target: "Physician I", type: "Rendering"},
+  {source: "Physician C", target: "Physician J", type: "Rendering"},
+  {source: "Physician A", target: "Physician K", type: "Rendering"},
+  {source: "Physician K", target: "Physician L", type: "Rendering"},
+  {source: "Physician K", target: "Physician M", type: "Rendering"},
+  {source: "Physician A", target: "Physician N", type: "Rendering"},
+  {source: "Physician I", target: "Physician E", type: "Rendering"}
 ];
 
 var nodes = {};
@@ -81,7 +81,7 @@ var svg = d3.select("body").append("svg")
 
 // Per-type markers, as they don't inherit styles.
 svg.append("defs").selectAll("marker")
-    .data(["suit", "licensing", "resolved"])
+    .data(["Referring", "Rendering", "Other"])
   .enter().append("marker")
     .attr("id", function(d) { return d; })
     .attr("viewBox", "0 -5 10 10")
